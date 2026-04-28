@@ -1,0 +1,336 @@
+/* Annonces Page Styles */
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.filter-group select {
+    padding: 10px;
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.annonces-count {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.annonces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.annonce-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.annonce-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.annonce-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    z-index: 10;
+}
+
+.annonce-badge.offre {
+    background: var(--primary);
+}
+
+.annonce-badge.demande {
+    background: #17a2b8;
+}
+
+.annonce-image {
+    height: 180px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.annonce-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.annonce-card:hover .annonce-image img {
+    transform: scale(1.05);
+}
+
+.annonce-content {
+    padding: 1.2rem;
+}
+
+.annonce-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.annonce-description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.annonce-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.annonce-meta .meta-item i {
+    margin-right: 4px;
+    width: 14px;
+}
+
+.annonce-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-dark);
+    margin-bottom: 1rem;
+}
+
+.annonce-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.annonce-actions button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.85rem;
+}
+
+.btn-view {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-view:hover {
+    background: var(--primary-dark);
+}
+
+.btn-contact {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-contact:hover {
+    background: var(--secondary-dark);
+}
+
+.btn-subscribe {
+    background: #9C27B0;
+    color: white;
+}
+
+.btn-subscribe:hover {
+    background: #7B1FA2;
+}
+
+.btn-abonne {
+    background: #28a745 !important;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    padding: 8px 14px;
+    border: 1px solid var(--gray);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-btn:hover:not(.disabled) {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.page-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading state */
+.image-loading {
+    position: relative;
+}
+
+.image-loading::after {
+    content: "📷";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .filter-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .annonces-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .annonce-actions {
+        flex-wrap: wrap;
+    }
+    
+    .annonce-actions button {
+        min-width: 100px;
+    }
+}
+/* Annonces Page Styles - Version corrigée */
+
+/* ... (garder tout le CSS précédent, et ajouter/modifier) ... */
+
+.annonce-image {
+    height: 180px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.annonce-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.annonce-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Fallback pour les icônes quand l'image ne charge pas */
+.annonce-image i {
+    font-size: 4rem;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.annonce-card:hover .annonce-image i {
+    transform: scale(1.1);
+}
+
+/* Effet de chargement */
+.annonce-image img[src=""] {
+    display: none;
+}
+
+/* Responsive images */
+@media (max-width: 768px) {
+    .annonce-image {
+        height: 160px;
+    }
+    
+    .annonce-image i {
+        font-size: 3rem;
+    }
+}

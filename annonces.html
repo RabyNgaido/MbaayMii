@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annonces - Mbaay Mi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/annonces.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <div class="logo-text">
+                    <h1 class="site-title">Mbaay Mi</h1>
+                    <p class="site-tagline">Plateforme Agricole du Sénégal</p>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="annonces.html" class="nav-link active">Annonces</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Tableau de Bord</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-filter"></i> Filtres & Recherche
+                </h2>
+            </div>
+            <div class="section-content">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Rechercher une annonce...">
+                    <button class="btn-primary" id="searchButton">
+                        <i class="fas fa-search"></i> Rechercher
+                    </button>
+                </div>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="categoryFilter"><i class="fas fa-tag"></i> Catégorie</label>
+                        <select id="categoryFilter">
+                            <option value="">Toutes</option>
+                            <option value="offre">Offres</option>
+                            <option value="demande">Demandes</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="regionFilter"><i class="fas fa-map-marker-alt"></i> Région</label>
+                        <select id="regionFilter">
+                            <option value="">Toutes</option>
+                            <option value="Dakar">Dakar</option>
+                            <option value="Thiès">Thiès</option>
+                            <option value="Saint-Louis">Saint-Louis</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="priceFilter"><i class="fas fa-money-bill-wave"></i> Prix max</label>
+                        <select id="priceFilter">
+                            <option value="">Tous</option>
+                            <option value="50000">Moins de 50 000 FCFA</option>
+                            <option value="100000">Moins de 100 000 FCFA</option>
+                            <option value="500000">Moins de 500 000 FCFA</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn-primary" id="applyFilters">Appliquer</button>
+                    <button class="btn-outline" id="resetFilters">Réinitialiser</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-list"></i> Liste des Annonces
+                </h2>
+                <span class="annonces-count" id="annoncesCount">3 annonces</span>
+            </div>
+            <div class="section-content">
+                <div class="annonces-grid" id="annoncesContainer">
+                    <!-- Annonces chargées par JS -->
+                </div>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Mbaay Mi - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/annonces.js"></script>
+</body>
+</html>
